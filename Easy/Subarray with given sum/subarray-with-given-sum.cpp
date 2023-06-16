@@ -11,33 +11,38 @@ class Solution
     vector<int> subarraySum(vector<int>arr, int n, long long sum)
     {
         // Your code here
-        vector<int>ans;
-        long long curr_sum=arr[0];
-        long long start=0;
-        for(int i=1;i<=n;i++){
-            
-            while(curr_sum>sum  && i-1>start){
-              curr_sum-=arr[start];
-              start++;
-              
-                
-            }
-            if(curr_sum==sum){
-                ans.push_back(start+1);
-                ans.push_back(i);
-                return ans;
-            }
-            if(i<n){
-                curr_sum+=arr[i];
-            }
-            
-            
-            
+        
+        int left = 0, right = 0;
+    int curr_sum = 0;
+    if(sum==0)return {-1};
+    
+    while (right <= n) {
+        // If current sum exceeds the target sum, remove elements from the left
+        while (curr_sum > sum && left < right) {
+            curr_sum -= arr[left];
+            left++;
         }
         
-        return{-1};
+        // If current sum equals the target sum, return the subarray indices
+        if (curr_sum == sum) {
+            vector<int> result;
+            result.push_back(left + 1);  // Convert to 1-based indexing
+            result.push_back(right);
+            return result;
+        }
         
+        // If current sum is less than the target sum, add the next element to the current sum
+        if (right < n)
+            curr_sum += arr[right];
         
+        right++;
+    }
+    
+    // If no subarray found, return {-1}
+    vector<int> result;
+    result.push_back(-1);
+    return result;
+
     }
 };
 
