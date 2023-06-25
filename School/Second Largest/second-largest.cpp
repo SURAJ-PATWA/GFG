@@ -11,13 +11,20 @@ public:
 	// largest elements
 	int print2largest(int arr[], int n) {
 	    // code here
+	    
 	    set<int>s(arr,arr+n);
+	   
+	    
 	    if (s.size() < 2) {
         return -1; // there is no second largest element
     }
-          auto it = prev(s.end(), 2);
-    int ans = *it; // dereference the iterator to get the element
-    return ans;
+    auto it=prev(s.end(),2);
+    return *it;
+    //       auto it = prev(s.end(), 2);
+    // int ans = *it; // dereference the iterator to get the element
+    // return ans;
+    
+    
           
           
           	}
