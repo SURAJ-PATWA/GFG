@@ -14,15 +14,20 @@ class Solution{
         // Your code here
         
         long long sum=0;
-        long long right_sum=0;
+        long long left_sum=0;
         for(int i=0;i<n;i++){
             sum+=a[i];
         }
         
-        for(int i=n-1;i>=0;i--){
-            sum=sum-a[i];
-            if(sum==right_sum)return i+1;
-            right_sum+=a[i];
+        // for(int i=n-1;i>=0;i--){
+        //     sum=sum-a[i];
+        //     if(sum==right_sum)return i+1;
+        //     right_sum+=a[i];
+        // }
+        for(int i=0;i<n;i++){
+            if(left_sum==sum-a[i])return i+1;
+            left_sum+=a[i];
+            sum-=a[i];
         }
         
         
