@@ -10,8 +10,9 @@ class Solution
     //Function to find a continuous sub-array which adds up to a given number.
     vector<int> subarraySum(vector<int>arr, int n, long long sum)
     {
-        // Your code here vector<int>ans;
-        int curr_sum=arr[0];
+        // Your code here 
+        // i will try to solve window sum
+        int curr_sum=arr[0] ;
         int start=0;
         for(int i=1;i<=n;i++){
             while(curr_sum>sum && start<i-1){
@@ -21,9 +22,9 @@ class Solution
             if(curr_sum==sum){
               return {start+1,i};  
             }
-            if(i<n){
+            //if(i<n){
              curr_sum+=arr[i];   
-            }
+            //}
         }
         
         
