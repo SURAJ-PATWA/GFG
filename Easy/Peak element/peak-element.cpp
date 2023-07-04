@@ -15,12 +15,12 @@ class Solution
     int peakElement(int arr[], int n)
     {
        // Your code here
+       int maxi=INT_MIN;
        int index=0;
-       int maxans=arr[0];
-       for(int i=1;i<n;i++){
-           if(maxans<arr[i]){
-              maxans=arr[i];
-             index=i;
+       for(int i=0;i<n;i++){
+           if(arr[i]>maxi){
+               maxi=arr[i];
+               index=i;
            }
        }
        return index;
