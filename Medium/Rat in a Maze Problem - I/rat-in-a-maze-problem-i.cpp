@@ -82,7 +82,9 @@ public:
         int srcx = 0;
         int srcy = 0;
         string path = "";
-        vector<vector<int>> visited(n, vector<int>(n, 0));
+       vector<vector<int>> visited(n, vector<int>(n, 0));
+     // vector<vector<int>>visited=m;for(int i=0;i<n;i++){for(j=0;j<n;j++)visited[i][j]=0;}}
+
         solve(m, n, ans, srcx, srcy, visited, path);
         sort(ans.begin(), ans.end());
         return ans;
