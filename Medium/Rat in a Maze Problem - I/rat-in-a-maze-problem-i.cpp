@@ -8,15 +8,7 @@ using namespace std;
 // } Driver Code Ends
 // User function template for C++
 
-// class Solution{
-//     public:
-//     vector<string> findPath(vector<vector<int>> &m, int n) {
-//         // Your code goes here
-//     }
-// };
-// #include <vector>
-// #include <string>
-// #include <algorithm>
+
 
 class Solution {
 private:
@@ -40,33 +32,33 @@ private:
         int newx = x + 1;
         int newy = y;
         if (issafe(newx, newy, n, visited, m)) {
-            path.push_back('D');
-            solve(m, n, ans, newx, newy, visited, path);
-            path.pop_back();
+           // path.push_back('D');
+            solve(m, n, ans, newx, newy, visited, path+'D');
+            //path.pop_back();
         }
         // left
         newx = x;
         newy = y - 1;
         if (issafe(newx, newy, n, visited, m)) {
-            path.push_back('L');
-            solve(m, n, ans, newx, newy, visited, path);
-            path.pop_back();
+           // path.push_back('L');
+            solve(m, n, ans, newx, newy, visited, path+'L');
+            //path.pop_back();
         }
         // right
         newx = x;
         newy = y + 1;
         if (issafe(newx, newy, n, visited, m)) {
-            path.push_back('R');
-            solve(m, n, ans, newx, newy, visited, path);
-            path.pop_back();
+           // path.push_back('R');
+            solve(m, n, ans, newx, newy, visited, path +'R');
+           // path.pop_back();
         }
         // up
         newx = x - 1;
         newy = y;
         if (issafe(newx, newy, n, visited, m)) {
-            path.push_back('U');
-            solve(m, n, ans, newx, newy, visited, path);
-            path.pop_back();
+           // path.push_back('U');
+            solve(m, n, ans, newx, newy, visited, path+'U');
+            //path.pop_back();
         }
 
         visited[x][y] = 0;
