@@ -21,17 +21,13 @@ class Solution{
     }
     
     void reverse(int a[],int low ,int high){
-       while(high>low){
+      while(high>low){
         swap(a[low],a[high]);
-        // int temp=arr[lo]w];
-        // arr[low]=arr[high];
-        // arr[high]=temp;
         low++;
         high--;
         }
         
     }
-    
     
 };
 
