@@ -31,38 +31,65 @@ struct Node *start = NULL;
 */
 class Solution
 {
+//     int zerocount=0;int onecount=0;int twocount=0; Node *curr=head;
+// while(curr){
+// if(curr->data==0)zerocount++;
+// else if(curr->data==1)onecount++;
+// else {
+//   twocount++;
+// }
+// curr=curr->next;
+// }
+
+// curr=head;
+// while (curr) {
+//   if (zerocount != 0) {
+//   curr->data=0;
+//   zerocount--;
+//   }
+//   else if(onecount != 0) {
+//         curr->data=1;
+//         onecount--;
+//   } else if (twocount != 0) {
+  
+//   curr->data=2;
+//   twocount--;
+//   }
+//   curr=curr->next;
+// }
     public:
     //Function to sort a linked list of 0s, 1s and 2s.
-   Node* segregate(Node *head) {
+    Node* segregate(Node *head) {
         
         // Add code here
-        int zerocount=0;int onecount=0;int twocount=0; Node *curr=head;
-while(curr){
-if(curr->data==0)zerocount++;
-else if(curr->data==1)onecount++;
-else {
-  twocount++;
-}
-curr=curr->next;
-}
-
-curr=head;
-while (curr) {
-  if (zerocount != 0) {
-  curr->data=0;
-  zerocount--;
-  }
-  else if(onecount != 0) {
-        curr->data=1;
-        onecount--;
-  } else if (twocount != 0) {
-  
-  curr->data=2;
-  twocount--;
-  }
-  curr=curr->next;
-}
-return head;
+        Node *curr=head;
+        int zero=0;int one=0;int two=0;
+        while(curr){
+            if(curr->data==0)zero++;
+            else if(curr->data==1)one++;
+            else two++;
+            curr=curr->next;
+        }
+        curr=head;
+        while(curr){
+            if(zero!=0){
+                
+                curr->data=0;
+                zero--;
+            }
+             else if(one!=0){
+                
+                curr->data=1;
+                one--;
+            }
+             else if(two!=0){
+                
+                curr->data=2;
+                two--;
+            }
+            curr=curr->next;
+        }
+        return head;
         
     }
 };
