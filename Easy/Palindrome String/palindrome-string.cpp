@@ -10,18 +10,15 @@ class Solution{
 public:	
 	
 	
-	int isPalindrome(string S)
+	int isPalindrome(string s)
 	{
 	    // Your code goes here
-	    string k=S;
-	    reverse(k.begin(),k.end());
-	    for(int i=0;i<S.size();i++){
-	        if(S[i]!=k[i]){
-	            return false;
-	        }
+	    int i=0;int j=s.size()-1;
+	    while(i<j){
+	        if(s[i]!=s[j])return 0;
+	        i++;j--;
 	    }
-	    
-	    return true;
+	    return 1;
 	}
 
 };
