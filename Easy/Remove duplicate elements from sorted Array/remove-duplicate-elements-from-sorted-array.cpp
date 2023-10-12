@@ -12,16 +12,17 @@ class Solution{
 public:
     int remove_duplicate(int a[],int n){
         // code here
-        int res=1;
-        
-        for(int i=1;i<n;i++){
-            if(a[res-1]!=a[i]){
-                a[res]=a[i];res++;
+        int i=0;
+        for(int j=1;j<n;j++){
+            if(a[i]!=a[j]){
+                a[i+1]=a[j];
+                i++;
             }
         }
-        
-        return res;
+        return i+1;
+           
     }
+    
 };
 
 //{ Driver Code Starts.
