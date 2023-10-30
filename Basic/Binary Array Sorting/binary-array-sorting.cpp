@@ -14,12 +14,11 @@ class Solution{
     void binSort(int A[], int N)
     {
        //Your code here
+       sort(A,A+N);
        
        /**************
         * No need to print the array
         * ************/
-        sort(A,A+N);
-        
     }
 };
 
