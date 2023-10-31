@@ -13,19 +13,14 @@ public:
 	next greatest element */
 	void nextGreatest(int arr[], int n) {
 	    // code here
-	    // create a maxium Heap so that you can maxi top element
 	    priority_queue<int>pq;
 	    pq.push(-1);
 	    for(int i=n-1;i>=0;i--){
-	        int ans=pq.top();
-	        
+	        int topdata=pq.top();
 	        pq.push(arr[i]);
-	        arr[i]=ans;
+	        arr[i]=topdata;
 	    }
-	    
-	    
-	    
-	    
+
 	}
 
 
