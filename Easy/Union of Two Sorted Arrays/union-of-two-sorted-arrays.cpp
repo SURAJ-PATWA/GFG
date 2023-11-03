@@ -13,26 +13,16 @@ class Solution{
     {
         //Your code here
         //return vector with correct order of elements
+        vector<int>ans;
+        set<int>mp(arr1,arr1+n);
+        for(int i=0;i<m;i++){
+            mp.insert(arr2[i]);
+        }
+        for(auto i:mp){
+            ans.push_back(i);
+        }
+        return ans;
         
-        
-    set<int>s;
-    vector<int>ans;
-    
-    for(int i=0;i<n;i++){
-        s.insert(arr1[i]);
-    }
-    
-    for(int j=0;j<m;j++){
-       s.insert(arr2[j]);
-    }
-    
-    for(int a:s){
-        ans.push_back(a);
-    }
-    
-    sort(ans.begin(),ans.end());
-    return ans;
-    
     }
 };
 
