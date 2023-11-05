@@ -17,19 +17,19 @@ class Solution{
     { 
     	
     	// Your code here
-    	vector<int>v;
-    long long mini=INT_MIN;
+    	vector<int>ans;
+   long long mini=INT_MIN;
    long long maxi=INT_MAX;
-    int start=0;int end=n-1;
-    while(start<=end){
-        maxi=min(maxi,arr[end]);
-        mini=max(mini,arr[start]);
-        v.push_back(maxi);
-        v.push_back(mini);
-        start++;end--;
+    int s=0;int e=n-1;
+    while(s<=e){
+        maxi=min(maxi,arr[e]);
+        mini=max(mini,arr[s]);
+        ans.push_back(maxi);
+        ans.push_back(mini);
+        s++;e--;
     }
     for(int i=0;i<n;i++){
-        arr[i]=v[i];
+        arr[i]=ans[i];
     }
     	 
     }
